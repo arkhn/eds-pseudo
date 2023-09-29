@@ -54,9 +54,9 @@ def split_dataset(
     full_xml_path = os.path.join(data_folder, 'full/xml')
 
     txt_files = [f for f in os.listdir(full_txt_path) if f.endswith('.txt')]
-    ##We need to sort the list in case listdir returns a different order depending on
-    ##how the files have been copy pasted in the full folder
-    txt_files.sort()
+    # We need to sort the list in case listdir returns a different order depending on
+    # how the files have been copy pasted in the full folder
+    txt_files = sorted(txt_files)
     random.shuffle(txt_files)
 
     dev_size = int(len(txt_files) * dev_percentage)
